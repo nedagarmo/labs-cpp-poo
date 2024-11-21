@@ -8,7 +8,7 @@
 #include <string>
 #include <utility>
 
-YoutubeChannel::YoutubeChannel(std::string title): title { std::move(title) }  {
+YoutubeChannel::YoutubeChannel(std::string title, std::string owner): title { std::move(title) }, owner { std::move(owner)}  {
 
 }
 
@@ -33,13 +33,39 @@ void YoutubeChannel::printInfo() {
     }
 }
 
-void CockingChannel::addIngredient(const std::string &ingredientName) {
+std::string YoutubeChannel::getOwnerName() {
+    return owner;
+}
+
+void CookingChannel::addIngredient(const std::string &ingredientName) {
     ingredients.push_back(ingredientName);
 }
 
-void CockingChannel::showIngredientList() {
+void CookingChannel::showIngredientList() {
     std::cout << "Ingredients! " << std::endl;
     for (const std::string& ingredient: ingredients) {
         std::cout << "- " << ingredient << std::endl;
     }
+}
+
+void CookingChannel::showIngredientList(const std::string& header) {
+    std::cout << header << std::endl;
+    for (const std::string& ingredient: ingredients) {
+        std::cout << "- " << ingredient << std::endl;
+    }
+}
+
+void CookingChannel::printInfo() {
+    std::cout << "* *  This is the information of the Cooking Channel  * * " << std::endl;
+    YoutubeChannel::printInfo();
+}
+
+
+// POO Polymorphism Implementation
+void CookingChannel::showOwnerName() {
+    std::cout << "Cooker's Name: " << getOwnerName() << std::endl;
+}
+
+void SingersChannel::showOwnerName() {
+    std::cout << "Singer's Name: " << getOwnerName() << std::endl;
 }

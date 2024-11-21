@@ -4,27 +4,45 @@
 int main() {
     system("clear");
     std::cout << "Youtube Channel Manager" << std::endl;
-    CockingChannel cockingChannel { "Nelson's Kitchen!" };
+    CookingChannel cookingChannel { "Nelson's Kitchen!", "Nelson" };
 
     // Publishing videos!
-    cockingChannel.publishVideo("My first homemade recipe");
-    cockingChannel.publishVideo("My second homemade recipe");
+    cookingChannel.publishVideo("My first homemade recipe");
+    cookingChannel.publishVideo("My second homemade recipe");
 
     // Adding a recipe
-    cockingChannel.addIngredient("400g (14 oz) spaghetti");
-    cockingChannel.addIngredient("4-5 cloves garlic, thinly sliced");
-    cockingChannel.addIngredient("1/4 cup extra virgin olive oil");
-    cockingChannel.addIngredient("1/2 tsp red pepper flakes (optional, for a spicy kick)");
+    cookingChannel.addIngredient("400g (14 oz) spaghetti");
+    cookingChannel.addIngredient("4-5 cloves garlic, thinly sliced");
+    cookingChannel.addIngredient("1/4 cup extra virgin olive oil");
+    cookingChannel.addIngredient("1/2 tsp red pepper flakes (optional, for a spicy kick)");
 
     // Subscribing and Unsubscribing
-    cockingChannel.subscribe();
-    cockingChannel.subscribe();
-    cockingChannel.subscribe();
-    cockingChannel.subscribe();
+    cookingChannel.subscribe();
+    cookingChannel.subscribe();
+    cookingChannel.subscribe();
+    cookingChannel.subscribe();
 
-    cockingChannel.unsubscribe();
+    cookingChannel.unsubscribe();
 
-    cockingChannel.printInfo();
-    cockingChannel.showIngredientList();
+    cookingChannel.printInfo();
+    cookingChannel.showIngredientList();
+    std::cout << std::endl;
+    std::cout << "***              ***                 ***              ***                 ***" << std::endl;
+    std::cout << std::endl;
+    cookingChannel.showIngredientList("Complete Recipe: ");
+    std::cout << std::endl;
+    std::cout << "***              ***                 ***              ***                 ***" << std::endl;
+    std::cout << std::endl;
+    cookingChannel.showOwnerName();
+    std::cout << std::endl;
+
+    std::cout << "***              ***                 ***              ***                 ***" << std::endl;
+    std::cout << "***              ***                 ***              ***                 ***" << std::endl;
+    std::cout << "***              ***                 ***              ***                 ***" << std::endl;
+
+    std::cout << std::endl;
+    SingersChannel singersChannel { "David's Songs", "David" };
+    singersChannel.showOwnerName();
+
     return 0;
 }
